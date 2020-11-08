@@ -1,4 +1,4 @@
-# ProjFinalLaravel
+# Projeto Final Laravel Pedidos Pizzaria
 :checkered_flag: Repositório criado com a finalidade de hospedar o trabalho final da Matéria de Tópicos Especiais 2, baseado no framework Laravel.
 
 <img src="https://img.shields.io/static/v1?label=php&message=laravel&color=blue&style=for-the-badge&logo=PHP"/>

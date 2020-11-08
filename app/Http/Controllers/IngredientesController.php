@@ -9,6 +9,10 @@ class IngredientesController extends Controller
 {
     public function index() {
         $ingredientes = Ingrediente::All();
-        return view("ingredientes", ['ingredientes'=>$ingredientes]);
+        return view("ingredientes.index", ['ingredientes'=>$ingredientes]);
+    }
+
+    public function create() {
+        return view('ingredientes.create');
     }
 }

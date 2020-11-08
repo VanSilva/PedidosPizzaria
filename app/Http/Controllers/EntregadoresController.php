@@ -9,6 +9,10 @@ class EntregadoresController extends Controller
 {
     public function index() {
         $entregadores = Entregador::All();
-        return view("entregadores", ['entregadores'=>$entregadores]);
+        return view("entregadores.index", ['entregadores'=>$entregadores]);
+    }
+
+    public function create() {
+        return view('entregadores.create');
     }
 }

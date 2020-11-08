@@ -4,7 +4,14 @@
   <title>Entregadores</title>
 </head>
 <body>
-  <h1>Entregador: {{ $nome }}</h1>
-  View p apresentar os dados
+  <h1>Entregadores</h1>
+  <ul>
+
+    @foreach($entregadores as $entregador)
+      <li>{{ $entregador-> nome }}</li>
+      <br>
+    @endforeach
+    
+  </ul>
 </body>
 </html>

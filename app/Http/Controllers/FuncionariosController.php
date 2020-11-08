@@ -3,11 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Funcionario;
 
 class FuncionariosController extends Controller
 {
     public function index() {
-        $nome = 'Maria';
-        return view("funcionarios", ['nome'=>$nome]);
+        $funcionarios = Funcionario::All();
+        return view("funcionarios", ['funcionarios'=>$funcionarios]);
     }
 }

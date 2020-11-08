@@ -3,11 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Entregador;
 
 class EntregadoresController extends Controller
 {
     public function index() {
-        $nome = 'José';
-        return view("entregadores", ['nome'=>$nome]);
+        $entregadores = Entregador::All();
+        return view("entregadores", ['entregadores'=>$entregadores]);
     }
 }

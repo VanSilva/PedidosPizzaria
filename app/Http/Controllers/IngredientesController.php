@@ -15,4 +15,11 @@ class IngredientesController extends Controller
     public function create() {
         return view('ingredientes.create');
     }
+    
+    public function store(Request $request) {
+        $novo_ingrediente = $request->all();
+        Ingrediente::create($novo_ingrediente);
+
+        return redirect('ingredientes');
+    }
 }

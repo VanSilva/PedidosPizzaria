@@ -14,11 +14,18 @@ Route::get('entregadores', 'entregadoresController@index');
 Route::get('ingredientes', 'ingredientesController@index');
 
 /**
- * CREATE routes
+ * GET create routes
  */
 Route::get('funcionarios/create', 'FuncionariosController@create');
 Route::get('entregadores/create', 'EntregadoresController@create');
 Route::get('ingredientes/create', 'IngredientesController@create');
+
+/**
+ * POST routes
+ */
+Route::post('funcionarios/store', 'FuncionariosController@store');
+Route::post('entregadores/store', 'EntregadoresController@store');
+Route::post('ingredientes/store', 'IngredientesController@store');
 
 Auth::routes();
 

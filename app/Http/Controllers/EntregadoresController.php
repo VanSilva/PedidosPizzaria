@@ -15,4 +15,11 @@ class EntregadoresController extends Controller
     public function create() {
         return view('entregadores.create');
     }
+    
+    public function store(Request $request) {
+        $novo_entregador = $request->all();
+        Entregador::create($novo_entregador);
+
+        return redirect('entregadores');
+    }
 }

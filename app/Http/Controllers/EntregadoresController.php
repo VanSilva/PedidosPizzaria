@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 class EntregadoresController extends Controller
 {
     public function index() {
-        return "Entregadores";
+        $nome = 'José';
+        return view("entregadores", ['nome'=>$nome]);
     }
 }

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 class FuncionariosController extends Controller
 {
     public function index() {
-        return "Funcionarios";
+        $nome = 'Maria';
+        return view("funcionarios", ['nome'=>$nome]);
     }
 }

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 class IngredientesController extends Controller
 {
     public function index() {
-        return "Ingredientes";
+        $descr = 'Tomate';
+        return view("ingredientes", ['descr'=>$descr]);
     }
 }

@@ -1,17 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Funcionarios</title>
-</head>
-<body>
-<h1>Funcionarios</h1>
-  <ul>
+@extends('adminlte::page')
 
-    @foreach($funcionarios as $funcionario)
-      <li>{{ $funcionario-> nome }}</li>
-      <br>
-    @endforeach
-    
-  </ul>
-</body>
-</html>
+@section('content')
+  @foreach($funcionarios as $funcionario)
+    <li>{{ $funcionario-> nome }}</li>
+    <br>
+  @endforeach
+@stop

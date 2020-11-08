@@ -1,17 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Ingredientes</title>
-</head>
-<body>
-<h1>Ingredientes</h1>
-  <ul>
+@extends('adminlte::page')
 
-    @foreach($ingredientes as $ingrediente)
-      <li>{{ $ingrediente-> descr }}</li>
-      <br>
-    @endforeach
-    
-  </ul>
-</body>
-</html>
+@section('content')
+  @foreach($ingredientes as $ingrediente)
+    <li>{{ $ingrediente-> descr }}</li>
+    <br>
+  @endforeach
+@stop

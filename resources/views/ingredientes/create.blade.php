@@ -3,6 +3,14 @@
 @section('content')
   <h3>Novo Ingrediente</h3>
 
+  @if($errors->any())
+    <ul class="alert alert-danger">
+      @foreach($errors->all() as $error)
+        <li>{{ $error }}</li>
+      @endforeach
+    </ul>
+  @endif
+
   {!! Form::open(['url'=>'ingredientes/store']) !!}
 
     <div class="form-group">

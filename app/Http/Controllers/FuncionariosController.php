@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Funcionario;
+use App\Http\Requests\FuncionarioRequest;
 
 class FuncionariosController extends Controller
 {
@@ -16,7 +17,12 @@ class FuncionariosController extends Controller
         return view('funcionarios.create');
     }
 
-    public function store(Request $request) {
+    public function destroy($id) {
+        Funcionario::find($id)->delete();
+        return redirect('funcionarios');
+    }
+
+    public function store(FuncionarioRequest $request) {
         $novo_funcionario = $request->all();
         Funcionario::create($novo_funcionario);
 

@@ -2,6 +2,14 @@
 
 @section('content')
   <h3>Novo Entregador</h3>
+  
+  @if($errors->any())
+    <ul class="alert alert-danger">
+      @foreach($errors->all() as $error)
+        <li>{{ $error }}</li>
+      @endforeach
+    </ul>
+  @endif
 
   {!! Form::open(['url'=>'entregadores/store']) !!}
 

@@ -19,13 +19,22 @@ class FuncionariosController extends Controller
 
     public function destroy($id) {
         Funcionario::find($id)->delete();
-        return redirect('funcionarios');
+        return redirect()->route('funcionarios');
+    }
+
+    public function edit($id) {
+        $funcionario = Funcionario::find($id);
+        return view('funcionarios.edit', compact('funcionario'));
+    }
+
+    public function update(FuncionarioRequest $request, $id) {
+        Funcionario::find($id)->update($request->all());
+        return redirect()->route('funcionarios');
     }
 
     public function store(FuncionarioRequest $request) {
         $novo_funcionario = $request->all();
         Funcionario::create($novo_funcionario);
-
-        return redirect('funcionarios');
+        return redirect()->route('funcionarios');
     }
 }

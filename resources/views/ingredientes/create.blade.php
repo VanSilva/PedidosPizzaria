@@ -11,7 +11,7 @@
     </ul>
   @endif
 
-  {!! Form::open(['url'=>'ingredientes/store']) !!}
+  {!! Form::open(['route'=>'ingredientes.store']) !!}
 
     <div class="form-group">
       {!! Form::label('descr', 'Descrição:') !!}

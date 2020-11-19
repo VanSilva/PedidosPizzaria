@@ -9,7 +9,7 @@ use App\Http\Requests\FuncionarioRequest;
 class FuncionariosController extends Controller
 {
     public function index() {
-        $funcionarios = Funcionario::All();
+        $funcionarios = Funcionario::orderBy('nome')->paginate(5);;
         return view("funcionarios.index", ['funcionarios'=>$funcionarios]);
     }
 

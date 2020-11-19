@@ -9,7 +9,7 @@ use App\Http\Requests\IngredienteRequest;
 class IngredientesController extends Controller
 {
     public function index() {
-        $ingredientes = Ingrediente::All();
+        $ingredientes = Ingrediente::orderBy('descr')->paginate(5);;
         return view("ingredientes.index", ['ingredientes'=>$ingredientes]);
     }
 
@@ -19,7 +19,7 @@ class IngredientesController extends Controller
 
     public function destroy($id) {
         Ingrediente::find($id)->delete();
-        return redirect()->route('ingredientes');
+        return redirect()->route('ingredientes.index');
     }
 
     public function edit($id) {
@@ -29,12 +29,12 @@ class IngredientesController extends Controller
 
     public function update(IngredienteRequest $request, $id) {
         Ingrediente::find($id)->update($request->all());
-        return redirect()->route('ingredientes');
+        return redirect()->route('ingredientes.index');
     }
     
     public function store(IngredienteRequest $request) {
         $novo_ingrediente = $request->all();
         Ingrediente::create($novo_ingrediente);
-        return redirect()->route('ingredientes');
+        return redirect()->route('ingredientes.index');
     }
 }

@@ -20,5 +20,7 @@
       @endforeach
     </tbody>
   </table>
+  {{ $funcionarios->links() }}
+  
   <a href="{{ route('funcionarios.create', [])  }}" class="btn btn-info">Adicionar</a>
 @stop

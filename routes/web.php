@@ -27,14 +27,23 @@ Route::group(['prefix'=>'entregadores', 'where'=>['id'=>'[0-9]']], function() {
     Route::post('store',       ['as'=>'entregadores.store',   'uses'=>'EntregadoresController@store'   ]);
 });
 
-Route::group(['prefix'=>'ingredientes', 'where'=>['id'=>'[0-9]']], function() {
-    Route::get('',             ['as'=>'ingredientes',         'uses'=>'IngredientesController@index'   ]);
-    Route::get('create',       ['as'=>'ingredientes.create',  'uses'=>'IngredientesController@create'  ]);
-    Route::get('{id}/destroy', ['as'=>'ingredientes.destroy', 'uses'=>'IngredientesController@destroy' ]);
-    Route::get('{id}/edit',    ['as'=>'ingredientes.edit',    'uses'=>'IngredientesController@edit'    ]);
-    Route::put('{id}/update',  ['as'=>'ingredientes.update',  'uses'=>'IngredientesController@update'  ]);
-    Route::post('store',       ['as'=>'ingredientes.store',   'uses'=>'IngredientesController@store'   ]);
-});
+
+// Route::group(['prefix'=>'ingredientes', 'where'=>['id'=>'[0-9]']], function() {
+//     Route::get('',             ['as'=>'ingredientes',         'uses'=>'IngredientesController@index'   ]);
+//     Route::get('create',       ['as'=>'ingredientes.create',  'uses'=>'IngredientesController@create'  ]);
+//     Route::get('{id}/destroy', ['as'=>'ingredientes.destroy', 'uses'=>'IngredientesController@destroy' ]);
+//     Route::get('edit/{id}',    ['as'=>'ingredientes.edit',    'uses'=>'IngredientesController@edit'    ]);
+//     Route::put('{id}/update',  ['as'=>'ingredientes.update',  'uses'=>'IngredientesController@update'  ]);
+//     Route::post('store',       ['as'=>'ingredientes.store',   'uses'=>'IngredientesController@store'   ]);
+// });
+
+Route::get('/ingredientes', 'IngredientesController@index')->name('ingredientes.index');
+Route::get('/ingredientes/create', 'IngredientesController@create')->name('ingredientes.create');
+Route::get('/ingredientes/edit/{id}', 'IngredientesController@edit')->name('ingredientes.edit');
+Route::get('/ingredientes/{id}/destroy', 'IngredientesController@destroy')->name('ingredientes.destroy');
+Route::post('/ingredientes/store', 'IngredientesController@store')->name('ingredientes.store');
+Route::put('/ingredientes/update/{id}', 'IngredientesController@update')->name('ingredientes.update');
+
 
 Auth::routes();
 

@@ -1,7 +1,7 @@
 @extends('adminlte::page')
 
 @section('content')
-<h1>Ingredientes</h1>
+  <h1>Ingredientes</h1>
   <table class="table table-stripe table-bordered table-hover">
     <thead>
       <th>Descricao</th>
@@ -20,5 +20,7 @@
       @endforeach
     </tbody>
   </table>
+  {{ $ingredientes->links() }}
+  
   <a href="{{ route('ingredientes.create', [])  }}" class="btn btn-info">Adicionar</a>
 @stop

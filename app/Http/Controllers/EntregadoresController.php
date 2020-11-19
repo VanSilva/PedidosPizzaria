@@ -9,7 +9,7 @@ use App\Http\Requests\EntregadorRequest;
 class EntregadoresController extends Controller
 {
     public function index() {
-        $entregadores = Entregador::All();
+        $entregadores = Entregador::orderBy('nome')->paginate(5);
         return view("entregadores.index", ['entregadores'=>$entregadores]);
     }
 

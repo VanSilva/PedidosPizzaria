@@ -16,10 +16,11 @@
         <a href="{{ route('entregadores.edit', ['id'=>$entregador->id])  }}" class="btn-sm btn-success">Editar</a>
         <a href="{{ route('entregadores.destroy', ['id'=>$entregador->id])  }}" class="btn-sm btn-danger">Remover</a>
         </td>
-        <br>
       </tr>
       @endforeach
     </tbody>
   </table>
+  {{ $entregadores->links() }}
+
   <a href="{{ route('entregadores.create', [])  }}" class="btn btn-info">Adicionar</a>
 @stop

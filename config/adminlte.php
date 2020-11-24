@@ -249,6 +249,12 @@ return [
             'url' => 'ingredientes',
             'icon' => 'fas fa-fw fa-users',
         ],
+        ['header' => 'PIZZAS'],
+        [
+            'text' => 'Listagem',
+            'url' => 'pizzas',
+            'icon' => 'fas fa-fw fa-users',
+        ],
         /*[
             'text' => 'search',
             'search' => true,

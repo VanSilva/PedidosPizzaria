@@ -27,6 +27,14 @@ Route::group(['prefix'=>'entregadores', 'where'=>['id'=>'[0-9]']], function() {
     Route::post('store',       ['as'=>'entregadores.store',   'uses'=>'EntregadoresController@store'   ]);
 });
 
+Route::group(['prefix'=>'pizzas', 'where'=>['id'=>'[0-9]']], function() {
+    Route::get('',             ['as'=>'pizzas',         'uses'=>'PizzasController@index'   ]);
+    Route::get('create',       ['as'=>'pizzas.create',  'uses'=>'PizzasController@create'  ]);
+    Route::get('{id}/destroy', ['as'=>'pizzas.destroy', 'uses'=>'PizzasController@destroy' ]);
+    Route::get('{id}/edit',    ['as'=>'pizzas.edit',    'uses'=>'PizzasController@edit'    ]);
+    Route::put('{id}/update',  ['as'=>'pizzas.update',  'uses'=>'PizzasController@update'  ]);
+    Route::post('store',       ['as'=>'pizzas.store',   'uses'=>'PizzasController@store'   ]);
+});
 
 // Route::group(['prefix'=>'ingredientes', 'where'=>['id'=>'[0-9]']], function() {
 //     Route::get('',             ['as'=>'ingredientes',         'uses'=>'IngredientesController@index'   ]);

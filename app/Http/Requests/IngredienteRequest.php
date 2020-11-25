@@ -24,7 +24,7 @@ class IngredienteRequest extends FormRequest
     public function rules()
     {
         return [
-            'descr' => 'required|min:2'
+            'descr' => 'required',
         ];
     }
 }

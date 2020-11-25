@@ -1,10 +1,10 @@
 @extends('adminlte::page')
 
 @section('content')
-  <h1>Ingredientes</h1>
+  <h1>Funcionarios</h1>
   <table class="table table-stripe table-bordered table-hover">
     <thead>
-      <th>Descricao</th>
+      <th>Nome</th>
       <th>Ações</th>
     </thead>
 

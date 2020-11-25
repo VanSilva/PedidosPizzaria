@@ -19,7 +19,7 @@ class IngredientesController extends Controller
 
     public function destroy($id) {
         Ingrediente::find($id)->delete();
-        return redirect()->route('ingredientes.index');
+        return redirect()->route('ingredientes');
     }
 
     public function edit($id) {
@@ -29,12 +29,12 @@ class IngredientesController extends Controller
 
     public function update(IngredienteRequest $request, $id) {
         Ingrediente::find($id)->update($request->all());
-        return redirect()->route('ingredientes.index');
+        return redirect()->route('ingredientes');
     }
-    
+
     public function store(IngredienteRequest $request) {
         $novo_ingrediente = $request->all();
         Ingrediente::create($novo_ingrediente);
-        return redirect()->route('ingredientes.index');
+        return redirect()->route('ingredientes');
     }
 }

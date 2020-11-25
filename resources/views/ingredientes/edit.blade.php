@@ -22,5 +22,6 @@
       {!! Form::submit('Editar Ingrediente', ['class'=>'btn btn-primary']) !!}
       {!! Form::reset('Limpar', ['class'=>'btn btn-default'])!!}
     </div>
+
   {!! Form::close() !!}
 @stop

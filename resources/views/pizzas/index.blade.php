@@ -13,7 +13,7 @@
       @foreach($pizzas as $pizza)
       <tr>
         <td>{{ $pizza->sabor }}</td>
-        <td>{{ $pizza->ingredientes }}</td>
+        <td>{{ $pizza->ingrediente->descr }}</td>
         <td>
         <a href="{{ route('pizzas.edit', ['id'=>$pizza->id])  }}" class="btn-sm btn-success">Editar</a>
         <a href="{{ route('pizzas.destroy', ['id'=>$pizza->id])  }}" class="btn-sm btn-danger">Remover</a>

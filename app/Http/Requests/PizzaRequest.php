@@ -25,7 +25,7 @@ class PizzaRequest extends FormRequest
     {
         return [
             'sabor' => 'required',
-            'ingredientes' => 'required',
+            'ingrediente_id' => 'required',
         ];
     }
 }

@@ -18,8 +18,16 @@
       {!! Form::text('sabor', null, ['class'=>'form-control', 'required']) !!}
     </div>
     <div class="form-group">
-      {!! Form::label('ingredientes', 'Ingredientes:') !!}
-      {!! Form::text('ingredientes', null, ['class'=>'form-control', 'required']) !!}
+      {!! Form::label('ingrediente_id', 'Ingredientes:') !!}
+      {!! Form::select('ingrediente_id',
+          \App\Ingrediente::orderBy('descr')->pluck('descr', 'id')->toArray(),
+          null, ['class'=>'form-control', 'required']) !!}
+    </div>
+    <div class="form-group">
+      {!! Form::label('ingrediente_id', 'Ingredientes:') !!}
+      {!! Form::select('ingrediente_id',
+          \App\Ingrediente::orderBy('descr')->pluck('descr', 'id')->toArray(),
+          null, ['class'=>'form-control']) !!}
     </div>
 
     <div class="form-group">

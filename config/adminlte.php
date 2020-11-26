@@ -255,6 +255,12 @@ return [
             'url' => 'pizzas',
             'icon' => 'fas fa-fw fa-users',
         ],
+        ['header' => 'PEDIDO PIZZAS'],
+        [
+            'text' => 'Listagem',
+            'url' => 'pedido',
+            'icon' => 'fas fa-fw fa-users',
+        ],
         /*[
             'text' => 'search',
             'search' => true,

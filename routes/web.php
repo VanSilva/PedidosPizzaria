@@ -45,12 +45,15 @@ Route::group(['prefix'=>'ingredientes', 'where'=>['id'=>'[0-9]']], function() {
     Route::post('store',       ['as'=>'ingredientes.store',   'uses'=>'IngredientesController@store'   ]);
 });
 
-// Route::get('/ingredientes', 'IngredientesController@index')->name('ingredientes.index');
-// Route::get('/ingredientes/create', 'IngredientesController@create')->name('ingredientes.create');
-// Route::get('/ingredientes/edit/{id}', 'IngredientesController@edit')->name('ingredientes.edit');
-// Route::get('/ingredientes/{id}/destroy', 'IngredientesController@destroy')->name('ingredientes.destroy');
-// Route::post('/ingredientes/store', 'IngredientesController@store')->name('ingredientes.store');
-// Route::put('/ingredientes/update/{id}', 'IngredientesController@update')->name('ingredientes.update');
+Route::group(['prefix'=>'pedidos', 'where'=>['id'=>'[0-9]']], function() {
+    Route::get('',             ['as'=>'pedidos',         'uses'=>'PedidosController@index'   ]);
+    Route::get('create',       ['as'=>'pedidos.create',  'uses'=>'PedidosController@create'  ]);
+    Route::get('{id}/destroy', ['as'=>'pedidos.destroy', 'uses'=>'PedidosController@destroy' ]);
+    Route::get('edit/{id}',    ['as'=>'pedidos.edit',    'uses'=>'PedidosController@edit'    ]);
+    Route::put('{id}/update',  ['as'=>'pedidos.update',  'uses'=>'PedidosController@update'  ]);
+    Route::post('store',       ['as'=>'pedidos.store',   'uses'=>'PedidosController@store'   ]);
+});
+
 
 
 Auth::routes();

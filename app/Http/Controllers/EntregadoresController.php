@@ -8,8 +8,16 @@ use App\Http\Requests\EntregadorRequest;
 
 class EntregadoresController extends Controller
 {
-    public function index() {
-        $entregadores = Entregador::orderBy('nome')->paginate(5);
+    public function index(Request $filtro) {
+        $filtragem = $filtro->get('desc_filtro');
+        if ($filtragem == null)
+            $entregadores = Entregador::orderBy('nome')->paginate(10);
+        else
+            $entregadores = Entregador::where('nome','like','%'.$filtragem.'%')
+                ->orderBy("nome")
+                ->paginate(10)
+                ->setpath('entregadores?desc_filtro='.$filtragem);
+
         return view("entregadores.index", ['entregadores'=>$entregadores]);
     }
 

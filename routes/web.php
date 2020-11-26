@@ -10,7 +10,7 @@ Route::get('/', function() {
  * GET all routes
  */
 Route::group(['prefix'=>'funcionarios', 'where'=>['id'=>'[0-9]']], function() {
-    Route::get('',             ['as'=>'funcionarios',         'uses'=>'FuncionariosController@index'   ]);
+    Route::any('',             ['as'=>'funcionarios',         'uses'=>'FuncionariosController@index'   ]);
     Route::get('create',       ['as'=>'funcionarios.create',  'uses'=>'FuncionariosController@create'  ]);
     Route::get('{id}/destroy', ['as'=>'funcionarios.destroy', 'uses'=>'FuncionariosController@destroy' ]);
     Route::get('{id}/edit',    ['as'=>'funcionarios.edit',    'uses'=>'FuncionariosController@edit'    ]);
@@ -19,7 +19,7 @@ Route::group(['prefix'=>'funcionarios', 'where'=>['id'=>'[0-9]']], function() {
 });
 
 Route::group(['prefix'=>'entregadores', 'where'=>['id'=>'[0-9]']], function() {
-    Route::get('',             ['as'=>'entregadores',         'uses'=>'EntregadoresController@index'   ]);
+    Route::any('',             ['as'=>'entregadores',         'uses'=>'EntregadoresController@index'   ]);
     Route::get('create',       ['as'=>'entregadores.create',  'uses'=>'EntregadoresController@create'  ]);
     Route::get('{id}/destroy', ['as'=>'entregadores.destroy', 'uses'=>'EntregadoresController@destroy' ]);
     Route::get('{id}/edit',    ['as'=>'entregadores.edit',    'uses'=>'EntregadoresController@edit'    ]);
@@ -28,7 +28,7 @@ Route::group(['prefix'=>'entregadores', 'where'=>['id'=>'[0-9]']], function() {
 });
 
 Route::group(['prefix'=>'pizzas', 'where'=>['id'=>'[0-9]']], function() {
-    Route::get('',             ['as'=>'pizzas',         'uses'=>'PizzasController@index'   ]);
+    Route::any('',             ['as'=>'pizzas',         'uses'=>'PizzasController@index'   ]);
     Route::get('create',       ['as'=>'pizzas.create',  'uses'=>'PizzasController@create'  ]);
     Route::get('{id}/destroy', ['as'=>'pizzas.destroy', 'uses'=>'PizzasController@destroy' ]);
     Route::get('{id}/edit',    ['as'=>'pizzas.edit',    'uses'=>'PizzasController@edit'    ]);
@@ -37,7 +37,7 @@ Route::group(['prefix'=>'pizzas', 'where'=>['id'=>'[0-9]']], function() {
 });
 
 Route::group(['prefix'=>'ingredientes', 'where'=>['id'=>'[0-9]']], function() {
-    Route::get('',             ['as'=>'ingredientes',         'uses'=>'IngredientesController@index'   ]);
+    Route::any('',             ['as'=>'ingredientes',         'uses'=>'IngredientesController@index'   ]);
     Route::get('create',       ['as'=>'ingredientes.create',  'uses'=>'IngredientesController@create'  ]);
     Route::get('{id}/destroy', ['as'=>'ingredientes.destroy', 'uses'=>'IngredientesController@destroy' ]);
     Route::get('edit/{id}',    ['as'=>'ingredientes.edit',    'uses'=>'IngredientesController@edit'    ]);
@@ -46,7 +46,7 @@ Route::group(['prefix'=>'ingredientes', 'where'=>['id'=>'[0-9]']], function() {
 });
 
 Route::group(['prefix'=>'pedidos', 'where'=>['id'=>'[0-9]']], function() {
-    Route::get('',             ['as'=>'pedidos',         'uses'=>'PedidosController@index'   ]);
+    Route::any('',             ['as'=>'pedidos',         'uses'=>'PedidosController@index'   ]);
     Route::get('create',       ['as'=>'pedidos.create',  'uses'=>'PedidosController@create'  ]);
     Route::get('{id}/destroy', ['as'=>'pedidos.destroy', 'uses'=>'PedidosController@destroy' ]);
     Route::get('edit/{id}',    ['as'=>'pedidos.edit',    'uses'=>'PedidosController@edit'    ]);

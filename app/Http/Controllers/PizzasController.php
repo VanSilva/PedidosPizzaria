@@ -8,8 +8,15 @@ use App\Http\Requests\PizzaRequest;
 
 class PizzasController extends Controller
 {
-    public function index() {
-        $pizzas = Pizza::orderBy('sabor')->paginate(5);;
+    public function index(Request $filtro) {
+        $filtragem = $filtro->get('desc_filtro');
+        if ($filtragem == null)
+            $pizzas = Pizza::orderBy('sabor')->paginate(10);
+        else
+            $pizzas = Pizza::where('sabor','like','%'.$filtragem.'%')
+                ->orderBy("sabor")
+                ->paginate(10)
+                ->setpath('pizzas?desc_filtro='.$filtragem);
         return view("pizzas.index", ['pizzas'=>$pizzas]);
     }
 

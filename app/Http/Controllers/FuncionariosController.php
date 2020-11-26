@@ -8,8 +8,15 @@ use App\Http\Requests\FuncionarioRequest;
 
 class FuncionariosController extends Controller
 {
-    public function index() {
-        $funcionarios = Funcionario::orderBy('nome')->paginate(5);;
+    public function index(Request $filtro) {
+        $filtragem = $filtro->get('desc_filtro');
+        if ($filtragem == null)
+            $funcionarios = Funcionario::orderBy('nome')->paginate(10);
+        else
+            $funcionarios = Funcionario::where('nome','like','%'.$filtragem.'%')
+                ->orderBy("nome")
+                ->paginate(10)
+                ->setpath('funcionarios?desc_filtro='.$filtragem);
         return view("funcionarios.index", ['funcionarios'=>$funcionarios]);
     }
 

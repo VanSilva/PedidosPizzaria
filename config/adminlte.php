@@ -258,7 +258,7 @@ return [
         ['header' => 'PEDIDO PIZZAS'],
         [
             'text' => 'Listagem',
-            'url' => 'pedido',
+            'url' => 'pedidos',
             'icon' => 'fas fa-fw fa-users',
         ],
         /*[

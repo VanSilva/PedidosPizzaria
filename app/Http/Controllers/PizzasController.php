@@ -11,11 +11,11 @@ class PizzasController extends Controller
     public function index(Request $filtro) {
         $filtragem = $filtro->get('desc_filtro');
         if ($filtragem == null)
-            $pizzas = Pizza::orderBy('sabor')->paginate(10);
+            $pizzas = Pizza::orderBy('sabor')->paginate(6);
         else
             $pizzas = Pizza::where('sabor','like','%'.$filtragem.'%')
                 ->orderBy("sabor")
-                ->paginate(10)
+                ->paginate(6)
                 ->setpath('pizzas?desc_filtro='.$filtragem);
         return view("pizzas.index", ['pizzas'=>$pizzas]);
     }

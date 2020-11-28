@@ -1,4 +1,4 @@
-@extends('adminlte::page')
+@extends('layouts.default')
 
 @section('content')
   <h1>Funcionarios</h1>
@@ -13,7 +13,9 @@
     </div>
   </div>
 {!! Form::close() !!}
-<br>
+
+<a href="{{ route('funcionarios.create', [])  }}" class="btn btn-info">Adicionar</a>
+<br><br>
 
   <table class="table table-stripe table-bordered table-hover">
     <thead>
@@ -27,7 +29,7 @@
         <td>{{ $funcionario->nome }}</td>
         <td>
         <a href="{{ route('funcionarios.edit', ['id'=>$funcionario->id])  }}" class="btn-sm btn-success">Editar</a>
-        <a href="{{ route('funcionarios.destroy', ['id'=>$funcionario->id])  }}" class="btn-sm btn-danger">Remover</a>
+        <a href="#" onclick="return ConfirmaExclusao({{$funcionario->id}})" class="btn-sm btn-danger">Remover</a>
         </td>
       </tr>
       @endforeach
@@ -35,5 +37,8 @@
   </table>
   {{ $funcionarios->links() }}
   
-  <a href="{{ route('funcionarios.create', [])  }}" class="btn btn-info">Adicionar</a>
 @stop
+
+@section('table-delete')
+"funcionarios"
+@endsection

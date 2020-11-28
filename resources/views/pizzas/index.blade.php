@@ -1,4 +1,4 @@
-@extends('adminlte::page')
+@extends('layouts.default')
 
 @section('content')
 <h1>Pizzas</h1>
@@ -13,7 +13,9 @@
     </div>
   </div>
 {!! Form::close() !!}
-<br>
+
+<a href="{{ route('pizzas.create', [])  }}" class="btn btn-info">Adicionar</a>
+<br><br>
 
   <table class="table table-stripe table-bordered table-hover">
     <thead>
@@ -29,7 +31,7 @@
         <td>{{ $pizza->ingrediente->descr }}</td>
         <td>
         <a href="{{ route('pizzas.edit', ['id'=>$pizza->id])  }}" class="btn-sm btn-success">Editar</a>
-        <a href="{{ route('pizzas.destroy', ['id'=>$pizza->id])  }}" class="btn-sm btn-danger">Remover</a>
+        <a href="#" onclick="return ConfirmaExclusao({{$pizza->id}})" class="btn-sm btn-danger">Remover</a>
         </td>
       </tr>
       @endforeach
@@ -37,5 +39,8 @@
   </table>
   {{ $pizzas->links() }}
 
-  <a href="{{ route('pizzas.create', [])  }}" class="btn btn-info">Adicionar</a>
 @stop
+
+@section('table-delete')
+"pizzas"
+@endsection

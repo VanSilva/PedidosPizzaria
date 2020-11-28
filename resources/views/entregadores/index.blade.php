@@ -1,4 +1,4 @@
-@extends('adminlte::page')
+@extends('layouts.default')
 
 @section('content')
 <h1>Entregadores</h1>
@@ -13,8 +13,9 @@
     </div>
   </div>
 {!! Form::close() !!}
-<br>
 
+<a href="{{ route('entregadores.create', [])  }}" class="btn btn-info">Adicionar</a>
+<br><br>
 
   <table class="table table-stripe table-bordered table-hover">
     <thead>
@@ -28,7 +29,7 @@
         <td>{{ $entregador->nome }}</td>
         <td>
         <a href="{{ route('entregadores.edit', ['id'=>$entregador->id])  }}" class="btn-sm btn-success">Editar</a>
-        <a href="{{ route('entregadores.destroy', ['id'=>$entregador->id])  }}" class="btn-sm btn-danger">Remover</a>
+        <a href="#" onclick="return ConfirmaExclusao({{$entregador->id}})" class="btn-sm btn-danger">Remover</a>
         </td>
       </tr>
       @endforeach
@@ -36,5 +37,8 @@
   </table>
   {{ $entregadores->links() }}
 
-  <a href="{{ route('entregadores.create', [])  }}" class="btn btn-info">Adicionar</a>
 @stop
+
+@section('table-delete')
+"entregadores"
+@endsection

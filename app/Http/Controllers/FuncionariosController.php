@@ -11,11 +11,11 @@ class FuncionariosController extends Controller
     public function index(Request $filtro) {
         $filtragem = $filtro->get('desc_filtro');
         if ($filtragem == null)
-            $funcionarios = Funcionario::orderBy('nome')->paginate(10);
+            $funcionarios = Funcionario::orderBy('nome')->paginate(6);
         else
             $funcionarios = Funcionario::where('nome','like','%'.$filtragem.'%')
                 ->orderBy("nome")
-                ->paginate(10)
+                ->paginate(6)
                 ->setpath('funcionarios?desc_filtro='.$filtragem);
         return view("funcionarios.index", ['funcionarios'=>$funcionarios]);
     }

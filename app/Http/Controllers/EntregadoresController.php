@@ -11,11 +11,11 @@ class EntregadoresController extends Controller
     public function index(Request $filtro) {
         $filtragem = $filtro->get('desc_filtro');
         if ($filtragem == null)
-            $entregadores = Entregador::orderBy('nome')->paginate(10);
+            $entregadores = Entregador::orderBy('nome')->paginate(6);
         else
             $entregadores = Entregador::where('nome','like','%'.$filtragem.'%')
                 ->orderBy("nome")
-                ->paginate(10)
+                ->paginate(6)
                 ->setpath('entregadores?desc_filtro='.$filtragem);
 
         return view("entregadores.index", ['entregadores'=>$entregadores]);

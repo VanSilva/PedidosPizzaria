@@ -11,11 +11,11 @@ class PedidosController extends Controller
     public function index(Request $filtro) {
         $filtragem = $filtro->get('desc_filtro');
         if ($filtragem == null)
-            $pedidos = Pedido::orderBy('pizza')->paginate(10);
+            $pedidos = Pedido::orderBy('pizza')->paginate(6);
         else
             $pedidos = Pedido::where('pizza','like','%'.$filtragem.'%')
                 ->orderBy("pizza")
-                ->paginate(10)
+                ->paginate(6)
                 ->setpath('pedidos?desc_filtro='.$filtragem);
         return view("pedidos.index", ['pedidos'=>$pedidos]);
     }

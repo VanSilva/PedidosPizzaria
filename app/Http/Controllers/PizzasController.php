@@ -24,10 +24,18 @@ class PizzasController extends Controller
         return view('pizzas.create');
     }
     
-    public function destroy($id) {
-        Pizza::find($id)->delete();
-        return redirect()->route('pizzas');
-    }
+	public function destroy($id) {
+		try {
+		    Pizza::find($id)->delete();
+			$ret = array('status'=>200, 'msg'=>"null");
+		} catch (\Illuminate\Database\QueryException $e) {
+			$ret = array('status'=>500, 'msg'=>$e->getMessage());
+		} 
+		catch (\PDOException $e) {
+			$ret = array('status'=>500, 'msg'=>$e->getMessage());
+		}
+		return $ret;
+	}
 
     public function edit($id) {
         $pizza = Pizza::find($id);

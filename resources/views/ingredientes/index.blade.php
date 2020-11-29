@@ -27,7 +27,7 @@
         <td>{{ $ingrediente->descr }}</td>
         <td>
         <a href="{{ route('ingredientes.edit', ['id'=>$ingrediente->id])  }}" class="btn-sm btn-success">Editar</a>
-        <a href="{{ route('ingredientes.destroy', ['id'=>$ingrediente->id])  }}" class="btn-sm btn-danger">Remover</a>
+        <a href="#" onclick="return ConfirmaExclusao({{$ingrediente->id}})" class="btn-sm btn-danger">Remover</a>
         </td>
       </tr>
       @endforeach

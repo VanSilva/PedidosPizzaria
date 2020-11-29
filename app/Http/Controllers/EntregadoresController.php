@@ -25,10 +25,18 @@ class EntregadoresController extends Controller
         return view('entregadores.create');
     }
 
-    public function destroy($id) {
-        Entregador::find($id)->delete();
-        return redirect()->route('entregadores');
-    }
+	public function destroy($id) {
+		try {
+		    Entregador::find($id)->delete();
+			$ret = array('status'=>200, 'msg'=>"null");
+		} catch (\Illuminate\Database\QueryException $e) {
+			$ret = array('status'=>500, 'msg'=>$e->getMessage());
+		} 
+		catch (\PDOException $e) {
+			$ret = array('status'=>500, 'msg'=>$e->getMessage());
+		}
+		return $ret;
+	}
 
     public function edit($id) {
         $entregador = Entregador::find($id);

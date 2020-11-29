@@ -63,6 +63,10 @@
       {!! Form::label('endereco', 'Endereço:') !!}
       {!! Form::text('endereco', null, ['class'=>'form-control', 'required']) !!}
     </div>
+    <div class="form-group">
+      {!! Form::label('obs', 'Observação:') !!}
+      {!! Form::text('obs', null, ['class'=>'form-control', 'required']) !!}
+    </div>
 
     <div class="form-group">
       {!! Form::submit('Criar Pedido Pizza', ['class'=>'btn btn-primary']) !!}

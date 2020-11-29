@@ -14,7 +14,8 @@ class Pedido extends Model
         'funcionario_id',
         'nome_cliente',
         'horario',
-        'endereco'
+        'endereco',
+        'obs'
     ];
 
     public function pizza() {

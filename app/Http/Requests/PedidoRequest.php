@@ -31,6 +31,7 @@ class PedidoRequest extends FormRequest
             'nome_cliente' => 'required',
             'horario' => 'required',
             'endereco' => 'required',
+            'obs',
         ];
     }
 }

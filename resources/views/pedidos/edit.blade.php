@@ -47,6 +47,10 @@
       {!! Form::label('endereco', 'Endereço:') !!}
       {!! Form::text('endereco', $pedido->endereco, ['class'=>'form-control', 'required']) !!}
     </div>
+    <div class="form-group">
+      {!! Form::label('obs', 'Observação:') !!}
+      {!! Form::text('obs', $pedido->obs, ['class'=>'form-control', 'required']) !!}
+    </div>
 
     <div class="form-group">
       {!! Form::submit('Editar Pedido Pizza', ['class'=>'btn btn-primary']) !!}

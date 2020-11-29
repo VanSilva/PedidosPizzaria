@@ -26,6 +26,7 @@
       <th>Nome do Cliente</th>
       <th>Hora Pedido</th>
       <th>Endereço</th>
+      <th>Obs</th>
       <th>Ações</th>
     </thead>
 
@@ -39,6 +40,7 @@
         <td>{{ $pedido->nome_cliente }}</td>
         <td>{{ $pedido->horario }}</td>
         <td>{{ $pedido->endereco }}</td>
+        <td>{{ $pedido->obs }}</td>
         <td>
         <a href="{{ route('pedidos.edit', ['id'=>$pedido->id])  }}" class="btn-sm btn-success">Editar</a>
         <a href="#" onclick="return ConfirmaExclusao({{$pedido->id}})" class="btn-sm btn-danger">Remover</a>

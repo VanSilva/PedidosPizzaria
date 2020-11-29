@@ -1,4 +1,4 @@
-@extends('adminlte::page')
+@extends('layouts.default')
 
 @section('content')
   <h1>Ingredientes</h1>
@@ -37,3 +37,7 @@
   
   <a href="{{ route('ingredientes.create', [])  }}" class="btn btn-info">Adicionar</a>
 @stop
+
+@section('table-delete')
+"pizzas"
+@endsection

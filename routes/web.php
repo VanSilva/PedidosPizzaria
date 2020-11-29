@@ -37,7 +37,7 @@ Route::group(['prefix'=>'pizzas', 'where'=>['id'=>'[0-9]']], function() {
 });
 
 Route::group(['prefix'=>'ingredientes', 'where'=>['id'=>'[0-9]']], function() {
-    Route::get('',             ['as'=>'ingredientes',         'uses'=>'IngredientesController@index'   ]);
+    Route::any('',             ['as'=>'ingredientes',         'uses'=>'IngredientesController@index'   ]);
     Route::get('create',       ['as'=>'ingredientes.create',  'uses'=>'IngredientesController@create'  ]);
     Route::get('{id}/destroy', ['as'=>'ingredientes.destroy', 'uses'=>'IngredientesController@destroy' ]);
     Route::get('edit/{id}',    ['as'=>'ingredientes.edit',    'uses'=>'IngredientesController@edit'    ]);

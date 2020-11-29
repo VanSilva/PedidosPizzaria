@@ -11,11 +11,11 @@ class IngredientesController extends Controller
     public function index(Request $filtro) {
         // $filtragem = $filtro->get('desc_filtro');
         // if ($filtragem == null)
-        //     $ingredientes = Ingrediente::orderBy('descr')->paginate(10);
+        //     $ingredientes = Ingrediente::orderBy('descr')->paginate(6);
         // else
         //     $ingredientes = Ingrediente::where('descr','like','%'.$filtragem.'%')
         //         ->orderBy("descr")
-        //         ->paginate(10)
+        //         ->paginate(6)
         //         ->setpath('ingredientes?desc_filtro='.$filtragem);
         $ingredientes = Ingrediente::orderBy('descr')->paginate(5);
         return view("ingredientes.index", ['ingredientes'=>$ingredientes]);

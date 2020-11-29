@@ -31,9 +31,9 @@
     <tbody>
       @foreach($pedidos as $pedido)
       <tr>
-        <td>{{ $pedido->pizza }}</td>
-        <td>{{ $pedido->entregador }}</td>
-        <td>{{ $pedido->funcionario }}</td>
+        <td>{{ $pedido->pizza->sabor }}</td>
+        <td>{{ $pedido->entregador->nome }}</td>
+        <td>{{ $pedido->funcionario->nome }}</td>
         <td>{{ $pedido->nome_cliente }}</td>
         <td>{{ $pedido->horario }}</td>
         <td>{{ $pedido->endereco }}</td>

@@ -8,4 +8,8 @@ class Entregador extends Model
 {
     protected $table = "entregadores";
     protected $fillable = ['nome'];
+
+    public function pedido() {
+        return $this->hasMany("App\Pedido");
+    }
 }

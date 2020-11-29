@@ -14,4 +14,8 @@ class Pizza extends Model
         return $this->belongsTo("App\Ingrediente");
     }
 
+    public function pedido() {
+        return $this->hasMany("App\Pedido");
+    }
+
 }

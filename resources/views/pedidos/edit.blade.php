@@ -1,7 +1,7 @@
 @extends('adminlte::page')
 
 @section('content')
-  <h3>Editando Pedido Pizza: {{ $pedido->pizza }}</h3>
+  <h3>Editando Pedido Pizza: {{ $pedido->nome_cliente }}</h3>
 
   @if($errors->any())
     <ul class="alert alert-danger">
@@ -15,15 +15,21 @@
 
     <div class="form-group">
       {!! Form::label('pizza', 'Pizza:') !!}
-      {!! Form::text('pizza', $pedido->pizza, ['class'=>'form-control', 'required']) !!}
+      {!! Form::select('pizza_id',
+          \App\Pizza::orderBy('sabor')->pluck('sabor', 'id')->toArray(),
+          $pedido->pizza_id, ['class'=>'form-control', 'required']) !!}
     </div>
     <div class="form-group">
       {!! Form::label('entregador', 'Entregador:') !!}
-      {!! Form::text('entregador', $pedido->entregador, ['class'=>'form-control', 'required']) !!}
+      {!! Form::select('entregador_id',
+          \App\Entregador::orderBy('nome')->pluck('nome', 'id')->toArray(),
+          $pedido->entregador_id, ['class'=>'form-control', 'required']) !!}
     </div>
     <div class="form-group">
       {!! Form::label('funcionario', 'Funcionario:') !!}
-      {!! Form::text('funcionario', $pedido->funcionario, ['class'=>'form-control', 'required']) !!}
+      {!! Form::select('funcionario_id',
+          \App\Funcionario::orderBy('nome')->pluck('nome', 'id')->toArray(),
+          $pedido->funcionario_id, ['class'=>'form-control', 'required']) !!}
     </div>
     <div class="form-group">
       {!! Form::label('nome_cliente', 'Nome do Cliente:') !!}

@@ -14,16 +14,22 @@
   {!! Form::open(['route'=>'pedidos.store']) !!}
 
     <div class="form-group">
-      {!! Form::label('pizza', 'Pizza:') !!}
-      {!! Form::text('pizza', null, ['class'=>'form-control', 'required']) !!}
+      {!! Form::label('pizza_id', 'Pizza:') !!}
+      {!! Form::select('pizza_id', 
+        \App\Pizza::orderBy('sabor')->pluck('sabor', 'id')->toArray(),
+          null, ['class'=>'form-control', 'required']) !!}
     </div>
     <div class="form-group">
-      {!! Form::label('entregador', 'Entregador:') !!}
-      {!! Form::text('entregador', null, ['class'=>'form-control', 'required']) !!}
+      {!! Form::label('entregador_id', 'Entregador:') !!}
+      {!! Form::select('entregador_id', 
+        \App\Entregador::orderBy('nome')->pluck('nome', 'id')->toArray(),
+          null, ['class'=>'form-control', 'required']) !!}
     </div>
     <div class="form-group">
-      {!! Form::label('funcionario', 'Funcionario:') !!}
-      {!! Form::text('funcionario', null, ['class'=>'form-control', 'required']) !!}
+      {!! Form::label('funcionario_id', 'Funcionario:') !!}
+      {!! Form::select('funcionario_id', 
+        \App\Funcionario::orderBy('nome')->pluck('nome', 'id')->toArray(),
+          null, ['class'=>'form-control', 'required']) !!}
     </div>
     <div class="form-group">
       {!! Form::label('nome_cliente', 'Nome do Cliente:') !!}
@@ -31,7 +37,17 @@
     </div>
     <div class="form-group">
       {!! Form::label('horario', 'Horário do Pedido:') !!}
-      {!! Form::text('horario', null, ['class'=>'form-control', 'required']) !!}
+      {!! Form::select('horario', 
+        array('20:00'=>'20:00',
+              '20:30'=>'20:30',
+              '21:00'=>'21:00',
+              '21:30'=>'21:30',
+              '22:00'=>'22:00',
+              '22:30'=>'22:30',
+              '23:00'=>'23:00',
+              '23:30'=>'23:30',
+              '00:00'=>'00:00'),
+              '20:00', ['class'=>'form-control', 'required']) !!}
     </div>
     <div class="form-group">
       {!! Form::label('endereco', 'Endereço:') !!}

@@ -18,8 +18,10 @@
       {!! Form::text('sabor', $pizza->sabor, ['class'=>'form-control', 'required']) !!}
     </div>
     <div class="form-group">
-      {!! Form::label('ingredientes', 'Ingredientes:') !!}
-      {!! Form::text('ingredientes', $pizza->ingredientes, ['class'=>'form-control', 'required']) !!}
+    {!! Form::label('ingrediente_id', 'Ingredientes:') !!}
+      {!! Form::select('ingrediente_id',
+          \App\Ingrediente::orderBy('descr')->pluck('descr', 'id')->toArray(),
+          $pizza->ingrediente_id, ['class'=>'form-control', 'required']) !!}
     </div>
 
     <div class="form-group">

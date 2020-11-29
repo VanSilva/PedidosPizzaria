@@ -24,9 +24,9 @@ class PedidoRequest extends FormRequest
     public function rules()
     {
         return [
-            'pizza' => 'required',
-            'entregador' => 'required',
-            'funcionario' => 'required',
+            'pizza_id' => 'required',
+            'entregador_id' => 'required',
+            'funcionario_id' => 'required',
             'nome_cliente' => 'required',
             'horario' => 'required',
             'endereco' => 'required',

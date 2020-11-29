@@ -39,5 +39,5 @@
 @stop
 
 @section('table-delete')
-"pizzas"
+"ingredientes"
 @endsection

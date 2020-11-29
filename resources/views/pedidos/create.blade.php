@@ -20,6 +20,16 @@
           null, ['class'=>'form-control', 'required']) !!}
     </div>
     <div class="form-group">
+      {!! Form::label('tamanho', 'Tamanho da pizza:') !!}
+      {!! Form::select('tamanho', 
+        array('Pequena'=>'Pequena(6 fatias)',
+              'Media'=>'Média(8 fatias)',
+              'Grande'=>'Grande(10 fatias)',
+              'Familia'=>'Família(12 fatias)',
+              'Gigante'=>'Gigante(16 fatias)'),
+              'Pequena', ['class'=>'form-control', 'required']) !!}
+    </div>
+    <div class="form-group">
       {!! Form::label('entregador_id', 'Entregador:') !!}
       {!! Form::select('entregador_id', 
         \App\Entregador::orderBy('nome')->pluck('nome', 'id')->toArray(),

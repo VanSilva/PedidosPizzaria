@@ -20,6 +20,7 @@
   <table class="table table-stripe table-bordered table-hover">
     <thead>
       <th>Pizza</th>
+      <th>Tamanho</th>
       <th>Entregador</th>
       <th>Funcionário</th>
       <th>Nome do Cliente</th>
@@ -32,6 +33,7 @@
       @foreach($pedidos as $pedido)
       <tr>
         <td>{{ $pedido->pizza->sabor }}</td>
+        <td>{{ $pedido->tamanho }}</td>
         <td>{{ $pedido->entregador->nome }}</td>
         <td>{{ $pedido->funcionario->nome }}</td>
         <td>{{ $pedido->nome_cliente }}</td>

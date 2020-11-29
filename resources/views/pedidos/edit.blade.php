@@ -20,6 +20,10 @@
           $pedido->pizza_id, ['class'=>'form-control', 'required']) !!}
     </div>
     <div class="form-group">
+      {!! Form::label('tamanho', 'Tamanho da Pizza') !!}
+      {!! Form::text('tamanho', $pedido->tamanho, ['class'=>'form-control', 'required']) !!}
+    </div>
+    <div class="form-group">
       {!! Form::label('entregador', 'Entregador:') !!}
       {!! Form::select('entregador_id',
           \App\Entregador::orderBy('nome')->pluck('nome', 'id')->toArray(),

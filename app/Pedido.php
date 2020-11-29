@@ -9,6 +9,7 @@ class Pedido extends Model
     protected $table = "pedidos";
     protected $fillable = [
         'pizza_id',
+        'tamanho',
         'entregador_id',
         'funcionario_id',
         'nome_cliente',

@@ -25,6 +25,7 @@ class PedidoRequest extends FormRequest
     {
         return [
             'pizza_id' => 'required',
+            'tamanho' => 'required',
             'entregador_id' => 'required',
             'funcionario_id' => 'required',
             'nome_cliente' => 'required',

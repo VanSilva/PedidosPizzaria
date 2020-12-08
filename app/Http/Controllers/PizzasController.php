@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Pizza;
 use App\Http\Requests\PizzaRequest;
+use App\PizzaIngrediente;
 
 class PizzasController extends Controller
 {
@@ -47,9 +48,18 @@ class PizzasController extends Controller
         return redirect()->route('pizzas');
     }
 
-    public function store(PizzaRequest $request) {
-        $novo_pizza = $request->all();
-        Pizza::create($novo_pizza);
+    public function store(Request $request){
+        $pizza = Pizza::create([
+                            'sabor' => $request->get('sabor')
+                        ]);
+
+        $ingredientes = $request->ingredientes;
+        foreach($ingredientes as $a => $value) {
+            PizzaIngrediente::create([
+                            'pizza_id' => $pizza->id,
+                            'ingrediente_id' => $ingredientes[$a]
+                        ]);
+        }
 
         return redirect()->route('pizzas');
     }

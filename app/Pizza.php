@@ -7,11 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class Pizza extends Model
 {
     protected $table = "pizzas";
-    protected $fillable = ['sabor', 'ingrediente_id'];
+    protected $fillable = ['sabor'];
 
 
-    public function ingrediente() {
-        return $this->belongsTo("App\Ingrediente");
+    public function ingredientes() {
+        return $this->hasMany("App\PizzaIngrediente");
     }
 
     public function pedido() {

@@ -28,6 +28,12 @@
 						).then(function(isConfirm) {
 							window.location.reload();
 						});
+					} if (data.status == 500) {
+						swal.fire(
+							'Atenção!',
+							'Atribuído em outra lista.',
+							'warning'
+						);
 					} else
 						swal.fire(
 							'Erro!',

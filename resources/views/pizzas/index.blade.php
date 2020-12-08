@@ -28,7 +28,11 @@
       @foreach($pizzas as $pizza)
       <tr>
         <td>{{ $pizza->sabor }}</td>
-        <td>{{ $pizza->ingrediente->descr }}</td>
+        <td>
+          @foreach($pizza->ingredientes as $i)
+            <li>{{ $i->ingrediente->descr }}</li>
+          @endforeach
+        </td>
         <td>
         <a href="{{ route('pizzas.edit', ['id'=>$pizza->id])  }}" class="btn-sm btn-success">Editar</a>
         <a href="#" onclick="return ConfirmaExclusao({{$pizza->id}})" class="btn-sm btn-danger">Remover</a>

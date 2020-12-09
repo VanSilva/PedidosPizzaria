@@ -28,7 +28,7 @@
 						).then(function(isConfirm) {
 							window.location.reload();
 						});
-					} if (data.status == 500) {
+					} else if (data.status == 500) {
 						swal.fire(
 							'Atenção!',
 							'Atribuído em outra lista.',

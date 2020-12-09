@@ -1,9 +1,9 @@
 @extends('layouts.default')
 
 @section('content')
-<h1>Entregadores</h1>
+<h1>Pizzas</h1>
 
-{!! Form::open(['name'=>'form_name', 'route'=>'entregadores']) !!}
+{!! Form::open(['name'=>'form_name', 'route'=>'pizzas']) !!}
   <div class="sidebar-form">
     <div class="input-group">
       <input type="text" name="desc_filtro" class="form-control" style="width:80% !important;" placeholder="Pesquisa...">
@@ -14,31 +14,37 @@
   </div>
 {!! Form::close() !!}
 
-<a href="{{ route('entregadores.create', [])  }}" class="btn btn-info">Adicionar</a>
+<a href="{{ route('pizzas.create', [])  }}" class="btn btn-info">Adicionar</a>
 <br><br>
 
   <table class="table table-stripe table-bordered table-hover">
     <thead>
-      <th>Nome</th>
+      <th>Sabor</th>
+      <th>Ingredientes</th>
       <th>Ações</th>
     </thead>
 
     <tbody>
-      @foreach($entregadores as $entregador)
+      @foreach($pizzas as $pizza)
       <tr>
-        <td>{{ $entregador->nome }}</td>
+        <td>{{ $pizza->sabor }}</td>
         <td>
-        <a href="{{ route('entregadores.edit', ['id'=>$entregador->id])  }}" class="btn-sm btn-success">Editar</a>
-        <a href="#" onclick="return ConfirmaExclusao({{$entregador->id}})" class="btn-sm btn-danger">Remover</a>
+          @foreach($pizza->ingredientes as $i)
+            <li>{{ $i->ingrediente->descr }}</li>
+          @endforeach
+        </td>
+        <td>
+        <a href="{{ route('pizzas.edit', ['id'=>$pizza->id])  }}" class="btn-sm btn-success">Editar</a>
+        <a href="#" onclick="return ConfirmaExclusao({{$pizza->id}})" class="btn-sm btn-danger">Remover</a>
         </td>
       </tr>
       @endforeach
     </tbody>
   </table>
-  {{ $entregadores->links() }}
+  {{ $pizzas->links() }}
 
 @stop
 
 @section('table-delete')
-"entregadores"
+"pizzas"
 @endsection

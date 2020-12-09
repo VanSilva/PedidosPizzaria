@@ -4,14 +4,27 @@
 <img src="https://img.shields.io/static/v1?label=php&message=laravel&color=blue&style=for-the-badge&logo=PHP"/>
 
 ### Projeto: Controle de pedidos de Pizzaria Delivery
-- Cadastro de funcionários :warning:
-    - teste
-  
-- Cadastro de sabores :warning:
-    - teste
-    
-- Cadastro de pizzas :warning:
-    - teste
+- Manutenção de funcionários :success:
+    - nome
 
-- Cadastro de motoboys :warning:
-    - teste
+- Manutenção de entregadores :success:
+    - nome
+  
+- Manutenção de ingredientes :success:
+    - descr
+    
+- Manutenção de pizzas :success:
+    - sabor
+    - ingredientes (Ingredientes)
+
+- Manutenção de pedidos :success:
+    - pizza (Pizza)
+    - tamanho
+    - entregador (Entregador)
+    - funcionario (Funcionário)
+    - nome do cliente
+    - hora do pedido
+    - endereço
+    - obervacoes
+
+

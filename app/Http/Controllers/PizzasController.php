@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Pizza;
 use App\Http\Requests\PizzaRequest;
+use App\Ingrediente;
 use App\PizzaIngrediente;
 
 class PizzasController extends Controller
@@ -36,15 +37,28 @@ class PizzasController extends Controller
 			$ret = array('status'=>500, 'msg'=>$e->getMessage());
 		}
 		return $ret;
-	}
-
-    public function edit($id) {
-        $pizza = Pizza::find($id);
-        return view('pizzas.edit', compact('pizza'));
     }
 
-    public function update(PizzaRequest $request, $id) {
+    public function edit($id)
+    {
+       $lista_ingredientes = Ingrediente::all();
+       $pizza = Pizza::find($id);
+       $ingredientes = $pizza->ingredientes;
+
+       return view('pizzas.edit', compact('pizza') , ['ingredientes' => $ingredientes , 'lista_ingredientes' => $lista_ingredientes]);
+    }
+
+    public function update(Request $request, $id) {
         Pizza::find($id)->update($request->all());
+
+        PizzaIngrediente::where('pizza_id', $id)->delete();
+        $ingredientes = $request->ingredientes;
+        foreach($ingredientes as $i => $value) {
+            PizzaIngrediente::create([
+                'pizza_id' => $id,
+                'ingrediente_id' => $ingredientes[$i]
+            ]);
+        }
         return redirect()->route('pizzas');
     }
 

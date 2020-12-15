@@ -38,8 +38,8 @@ class IngredientesController extends Controller
 		return $ret;
 	}
 
-    public function edit($id) {
-        $ingrediente = Ingrediente::find($id);
+    public function edit(Request $request) {
+        $ingrediente = Ingrediente::find(\Crypt::decrypt($request->get('id')));
         return view('ingredientes.edit', compact('ingrediente'));
     }
 

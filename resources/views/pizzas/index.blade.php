@@ -34,7 +34,7 @@
           @endforeach
         </td>
         <td>
-        <a href="{{ route('pizzas.edit', ['id'=>$pizza->id])  }}" class="btn-sm btn-success">Editar</a>
+        <a href="{{ route('pizzas.edit', ['id'=>\Crypt::encrypt($pizza->id)])  }}" class="btn-sm btn-success">Editar</a>
         <a href="#" onclick="return ConfirmaExclusao({{$pizza->id}})" class="btn-sm btn-danger">Remover</a>
         </td>
       </tr>

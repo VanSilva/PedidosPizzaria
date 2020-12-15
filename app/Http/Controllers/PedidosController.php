@@ -37,8 +37,8 @@ class PedidosController extends Controller
 		return $ret;
 	}
 
-    public function edit($id) {
-        $pedido = Pedido::find($id);
+    public function edit(Request $request) {
+        $pedido = Pedido::find(\Crypt::decrypt($request->get('id')));
         return view('pedidos.edit', compact('pedido'));
     }
 

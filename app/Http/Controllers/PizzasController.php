@@ -39,10 +39,9 @@ class PizzasController extends Controller
 		return $ret;
     }
 
-    public function edit($id)
-    {
+    public function edit(Request $request) {
        $lista_ingredientes = Ingrediente::all();
-       $pizza = Pizza::find($id);
+       $pizza = Pizza::find(\Crypt::decrypt($request->get('id')));
        $ingredientes = $pizza->ingredientes;
 
        return view('pizzas.edit', compact('pizza') , ['ingredientes' => $ingredientes , 'lista_ingredientes' => $lista_ingredientes]);

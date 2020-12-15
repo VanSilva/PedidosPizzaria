@@ -233,33 +233,33 @@ return [
     'menu' => [
         ['header' => 'FUNCIONARIOS'],
         [
-            'text' => 'Listagem',
+            'text' => 'Ver Funcionários',
             'url' => 'funcionarios',
-            'icon' => 'fas fa-fw fa-users',
+            'icon' => 'fas fa-user-ninja',
         ],
         ['header' => 'ENTREGADORES'],
         [
-            'text' => 'Listagem',
+            'text' => 'Ver Entregadores',
             'url' => 'entregadores',
-            'icon' => 'fas fa-fw fa-users',
+            'icon' => 'fas fa-motorcycle',
         ],
         ['header' => 'INGREDIENTES'],
         [
-            'text' => 'Listagem',
+            'text' => 'Ver Ingredientes',
             'url' => 'ingredientes',
-            'icon' => 'fas fa-fw fa-users',
+            'icon' => 'fas fa-cheese',
         ],
         ['header' => 'PIZZAS'],
         [
-            'text' => 'Listagem',
+            'text' => 'Ver Pizzas',
             'url' => 'pizzas',
-            'icon' => 'fas fa-fw fa-users',
+            'icon' => 'fas fa-pizza-slice',
         ],
         ['header' => 'PEDIDO PIZZAS'],
         [
-            'text' => 'Listagem',
+            'text' => 'Ver Pizzas',
             'url' => 'pedidos',
-            'icon' => 'fas fa-fw fa-users',
+            'icon' => 'fas fa-truck',
         ],
         /*[
             'text' => 'search',

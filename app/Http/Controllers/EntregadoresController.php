@@ -38,8 +38,8 @@ class EntregadoresController extends Controller
 		return $ret;
 	}
 
-    public function edit($id) {
-        $entregador = Entregador::find($id);
+    public function edit(Request $request) {
+        $entregador = Entregador::find(\Crypt::decrypt($request->get('id')));
         return view('entregadores.edit', compact('entregador'));
     }
 

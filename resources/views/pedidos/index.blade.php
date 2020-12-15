@@ -42,7 +42,7 @@
         <td>{{ $pedido->endereco }}</td>
         <td>{{ $pedido->obs }}</td>
         <td>
-        <a href="{{ route('pedidos.edit', ['id'=>$pedido->id])  }}" class="btn-sm btn-success">Editar</a>
+        <a href="{{ route('pedidos.edit', ['id'=>\Crypt::encrypt($pedido->id)])  }}" class="btn-sm btn-success">Editar</a>
         <a href="#" onclick="return ConfirmaExclusao({{$pedido->id}})" class="btn-sm btn-danger">Remover</a>
         </td>
       </tr>

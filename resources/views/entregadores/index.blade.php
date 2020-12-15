@@ -28,7 +28,7 @@
       <tr>
         <td>{{ $entregador->nome }}</td>
         <td>
-        <a href="{{ route('entregadores.edit', ['id'=>$entregador->id])  }}" class="btn-sm btn-success">Editar</a>
+        <a href="{{ route('entregadores.edit', ['id'=>\Crypt::encrypt($entregador->id)])  }}" class="btn-sm btn-success">Editar</a>
         <a href="#" onclick="return ConfirmaExclusao({{$entregador->id}})" class="btn-sm btn-danger">Remover</a>
         </td>
       </tr>

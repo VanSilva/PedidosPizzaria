@@ -255,9 +255,9 @@ return [
             'url' => 'pizzas',
             'icon' => 'fas fa-pizza-slice',
         ],
-        ['header' => 'PEDIDO PIZZAS'],
+        ['header' => 'PEDIDOS'],
         [
-            'text' => 'Ver Pizzas',
+            'text' => 'Ver Pedidos',
             'url' => 'pedidos',
             'icon' => 'fas fa-truck',
         ],
